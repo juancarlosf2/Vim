@@ -514,6 +514,12 @@ class SurroundHelper {
     a: { left: '<', right: '>', removeSpace: false, movement: () => new MoveAroundCaret() },
     t: { left: '', right: '', removeSpace: false, movement: () => new MoveAroundTag() },
     _: { left: '_', right: '_', removeSpace: false, movement: () => new SelectInnerWord() },
+    '-': {
+      left: '{t("',
+      right: '")}',
+      removeSpace: false,
+      movement: () => new MoveAroundCurlyBrace(),
+    },
   };
 
   /** returns two ranges (for left and right replacement) for our surround target (X in dsX, csXy) relative to position */

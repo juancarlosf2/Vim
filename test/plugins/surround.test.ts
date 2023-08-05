@@ -15,6 +15,13 @@ suite('surround plugin', () => {
   suiteTeardown(cleanUpWorkspace);
 
   newTest({
+    title: "'ysiw-' surrounds word without space",
+    start: ['first li|ne test'],
+    keysPressed: 'ysiw-',
+    end: ['first |{t("line")} test'],
+  });
+
+  newTest({
     title: "'ysiw)' surrounds word without space",
     start: ['first li|ne test'],
     keysPressed: 'ysiw)',
